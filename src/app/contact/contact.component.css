@@ -1,7 +1,7 @@
 p {
-    margin-top: 4rem;
+    margin-bottom: .5rem;
     text-align: center;
-    width: 80%;
+    width: 100%;
     max-width: 800px;
 }
 
@@ -9,6 +9,11 @@ a {
     text-align: center;
     text-decoration: none;
     color: rgba(51, 98, 46, 1);
+    font-family: 'Muli', sans-serif;
+}
+
+fa-icon {
+    margin-right: .5rem;
 }
 
 #contact-logo {
