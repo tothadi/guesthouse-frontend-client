@@ -4,6 +4,8 @@ COPY src ./src
 COPY package.json ./
 COPY angular.json ./
 COPY tsconfig* ./
+COPY .browserlistsrc ./
+COPY karma.conf.js ./
 RUN pwd
 RUN ls
 RUN curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
