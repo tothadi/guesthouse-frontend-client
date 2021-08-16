@@ -3,6 +3,7 @@ FROM node:lts as build
 
 WORKDIR '/usr/src/app'
 
+RUN mkdir backend
 COPY src ./src
 COPY package.json ./
 COPY angular.json ./
@@ -16,7 +17,5 @@ RUN npm run build:app
 WORKDIR '/usr/src/app/backend'
 COPY backend ./
 RUN npm i --production
-RUN mkdir client
-COPY ../dist/* ./client
 
 RUN npm start
