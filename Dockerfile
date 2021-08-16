@@ -8,7 +8,7 @@ COPY tsconfig* ./
 COPY karma.conf.js ./
 
 RUN npm i @angular/cli --no-progress --loglevel=error
-RUN ng build --prod --output-path ./dist
+RUN npm run build:app
 
 ### STAGE 2: Setup ###
 FROM nginx:alpine
