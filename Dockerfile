@@ -4,7 +4,7 @@ COPY src ./src
 COPY package.json ./
 COPY angular.json ./
 COPY tsconfig* ./
-COPY .browserlistsrc ./
+COPY ./.browserlistsrc ./
 COPY karma.conf.js ./
 RUN pwd
 RUN ls
