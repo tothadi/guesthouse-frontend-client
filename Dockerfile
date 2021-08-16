@@ -7,6 +7,8 @@ COPY tsconfig* ./
 COPY karma.conf.js ./
 RUN pwd
 RUN ls
+RUN apt update && apt upgrade -y
+RUN apt install build-essential -y
 RUN curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt install nodejs -y

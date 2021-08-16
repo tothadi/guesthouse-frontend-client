@@ -19,7 +19,7 @@ export class FooterComponent implements OnInit {
     globe: IconDefinition;
     phone: IconDefinition;
     pencil: IconDefinition;
-    address: IconDefinition;
+    home: IconDefinition;
 
     constructor() {
         library.add(faEnvelope, faPhone, faGlobeEurope, faPencilAlt, faHome);
@@ -27,7 +27,7 @@ export class FooterComponent implements OnInit {
         this.globe = icon({ prefix: 'fas', iconName: 'globe-europe' });
         this.envelope = icon({ prefix: 'fas', iconName: 'envelope' });
         this.pencil = icon({prefix: 'fas', iconName: 'pencil-alt'})
-        this.address = icon({prefix: 'fas', iconName: 'home'})
+        this.home = icon({prefix: 'fas', iconName: 'home'})
     }
 
     ngOnInit(): void {}
