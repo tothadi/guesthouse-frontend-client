@@ -1,19 +1,17 @@
-FROM nginx
-WORKDIR '/app'
+### STAGE 1: Build ###
+FROM node:lts as build
+WORKDIR '/usr/src/app'
 COPY src ./src
 COPY package.json ./
 COPY angular.json ./
 COPY tsconfig* ./
 COPY karma.conf.js ./
-RUN pwd
-RUN ls
-RUN apt update && apt upgrade -y
-RUN apt install build-essential -y
-RUN curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
-RUN bash nodesource_setup.sh
-RUN apt install nodejs -y
-RUN npm install -g @angular/cli
-RUN npm install
-RUN ng build --prod --output-path /var/www/konczevolgyi-vendeghaz.hu/html/
-COPY konczevolgyi-vendeghaz.hu /etc/nginx/sites-enabled/konczevolgyi-vendeghaz.hu
+
+RUN npm i @angular/cli --no-progress --loglevel=error
+RUN ng build --prod --output-path ./dist
+
+### STAGE 2: Setup ###
+FROM nginx:alpine
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder /usr/src/app/dist /var/www/konczevolgyi-vendeghaz.hu/html/
+COPY konczevolgyi-vendeghaz.hu /etc/nginx/sites-enabled/konczevolgyi-vendeghaz.hu
