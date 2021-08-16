@@ -18,4 +18,4 @@ WORKDIR '/usr/src/app/backend'
 COPY backend ./
 RUN npm i --production
 
-RUN npm start
+CMD [ "node", "index" ]
