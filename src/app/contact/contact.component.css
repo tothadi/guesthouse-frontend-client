@@ -1,0 +1,17 @@
+p {
+    margin-top: 4rem;
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    color: rgba(51, 98, 46, 1);
+}
+
+#contact-logo {
+    margin-top: 2rem;
+    width: 30%;
+}
