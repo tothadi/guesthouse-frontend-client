@@ -7,6 +7,7 @@ COPY angular.json ./
 COPY tsconfig* ./
 COPY karma.conf.js ./
 
+RUN npm i
 RUN npm i @angular/cli --no-progress --loglevel=error
 RUN npm run build:app
 
