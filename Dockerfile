@@ -1,7 +1,5 @@
 ### STAGE 1: Build ###
 FROM node:lts as build
-ENV NODE_ENV=production
-ENV HOST '0.0.0.0'
 
 WORKDIR '/usr/src/app'
 
