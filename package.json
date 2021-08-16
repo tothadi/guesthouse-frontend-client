@@ -1,6 +1,7 @@
 {
   "name": "guesthouse-frontend-client",
   "version": "0.0.2",
+  "author": "tothadi",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
