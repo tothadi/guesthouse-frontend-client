@@ -1,6 +1,5 @@
 ### STAGE 1: Build ###
-FROM node:lts as build
-
+FROM node:14.17.3
 WORKDIR '/usr/src/app'
 
 RUN mkdir backend
