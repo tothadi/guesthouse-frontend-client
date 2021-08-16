@@ -1,6 +1,11 @@
 ### STAGE 1: Build ###
 FROM node:lts as build
+ENV NODE_ENV=production
+ENV HOST '0.0.0.0'
+
 WORKDIR '/usr/src/app'
+
+COPY backend ./backend
 COPY src ./src
 COPY package.json ./
 COPY angular.json ./
@@ -10,8 +15,8 @@ COPY karma.conf.js ./
 RUN npm i
 RUN npm i @angular/cli --no-progress --loglevel=error
 RUN npm run build:app
+RUN cd client
+RUN npm i --production
 
-### STAGE 2: Setup ###
-FROM nginx:alpine
-COPY --from=build /usr/src/app/dist /usr/share/nginx/html
-#CMD [nginx -g]
+RUN npm start
+
