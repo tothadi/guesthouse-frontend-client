@@ -1,3 +1,7 @@
+div {
+    margin-bottom: 1.5rem;
+}
+
 p {
     margin-bottom: .5rem;
     text-align: center;
@@ -6,6 +10,10 @@ p {
 }
 
 a {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
     color: rgba(51, 98, 46, 1);
@@ -17,6 +25,5 @@ fa-icon {
 }
 
 #contact-logo {
-    margin-top: 2rem;
     width: 30%;
 }

@@ -29,6 +29,10 @@ p {
     font-family: 'Muli', sans-serif;
 }
 
+#footer-contact a {
+    margin-bottom: .3rem;
+}
+
 #footer-contact fa-icon, #footer-logo fa-icon {
     margin-right: .5rem;
 }
