@@ -1,0 +1,16 @@
+server {
+
+        listen [::]:80;
+        listen 80;
+        
+        root /var/www/konczevolgyi-vendeghaz.hu/html;
+        index.html;
+
+        server_name konczevolgyi-vendeghaz.hu www.konczevolgyi-vendeghaz.hu;
+
+        location / {
+               expires max;
+        try_files $uri $uri/ =404;
+        }
+    
+}
